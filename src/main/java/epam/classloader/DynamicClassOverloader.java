@@ -52,7 +52,7 @@ public class DynamicClassOverloader extends ClassLoader {
 
     private File findFile(String name, String extension) {
         for (int k = 0; k < classPath.length; k++) {
-            File f = new File((new File(classPath[k])).getPath()
+            File f = new File(new File(classPath[k]).getPath()
                     + File.separatorChar + name + extension);
             if (f.exists()) {
                 return f;
